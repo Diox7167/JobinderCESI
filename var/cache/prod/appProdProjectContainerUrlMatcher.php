@@ -28,25 +28,20 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
             $canonicalMethod = 'GET';
         }
 
-        // homepage
+        // accueil
         if ('' === $trimmedPathinfo) {
-            $ret = array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
+            $ret = array (  '_controller' => 'AppBundle\\Controller\\DefaultController::accueilAction',  '_route' => 'accueil',);
             if ('/' === substr($pathinfo, -1)) {
                 // no-op
             } elseif ('GET' !== $canonicalMethod) {
-                goto not_homepage;
+                goto not_accueil;
             } else {
-                return array_replace($ret, $this->redirect($rawPathinfo.'/', 'homepage'));
+                return array_replace($ret, $this->redirect($rawPathinfo.'/', 'accueil'));
             }
 
             return $ret;
         }
-        not_homepage:
-
-        // accueil
-        if ('/accueil' === $pathinfo) {
-            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::accueilAction',  '_route' => 'accueil',);
-        }
+        not_accueil:
 
         if ('/' === $pathinfo && !$allow) {
             throw new Symfony\Component\Routing\Exception\NoConfigurationException();

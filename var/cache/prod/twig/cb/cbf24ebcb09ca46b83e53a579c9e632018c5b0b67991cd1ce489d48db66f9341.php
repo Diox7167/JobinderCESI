@@ -10,7 +10,7 @@ class __TwigTemplate_ba65303d1ad5ca302fbd649d1e5c585788b2cd40cc004fada792a82faaf
         $this->parent = false;
 
         $this->blocks = array(
-            '__internal_d5afdb4d416834b87583c682b00d8753600b7f187c0622c823982651738f61f9' => array($this, 'block___internal_d5afdb4d416834b87583c682b00d8753600b7f187c0622c823982651738f61f9'),
+            '__internal_68137cd316d73a93d4c89ddc241f48dc6143becd593e408174e8d51b1d3f8474' => array($this, 'block___internal_68137cd316d73a93d4c89ddc241f48dc6143becd593e408174e8d51b1d3f8474'),
         );
     }
 
@@ -67,7 +67,7 @@ class __TwigTemplate_ba65303d1ad5ca302fbd649d1e5c585788b2cd40cc004fada792a82faaf
             // line 21
             echo "                <pre class=\"stacktrace\">";
             // line 22
-            echo twig_escape_filter($this->env,             $this->renderBlock("__internal_d5afdb4d416834b87583c682b00d8753600b7f187c0622c823982651738f61f9", $context, $blocks), "html");
+            echo twig_escape_filter($this->env,             $this->renderBlock("__internal_68137cd316d73a93d4c89ddc241f48dc6143becd593e408174e8d51b1d3f8474", $context, $blocks), "html");
             // line 25
             echo "                </pre>
                 ";
@@ -81,7 +81,7 @@ class __TwigTemplate_ba65303d1ad5ca302fbd649d1e5c585788b2cd40cc004fada792a82faaf
     }
 
     // line 22
-    public function block___internal_d5afdb4d416834b87583c682b00d8753600b7f187c0622c823982651738f61f9($context, array $blocks = array())
+    public function block___internal_68137cd316d73a93d4c89ddc241f48dc6143becd593e408174e8d51b1d3f8474($context, array $blocks = array())
     {
         // line 23
         echo twig_include($this->env, $context, "@Twig/Exception/traces.txt.twig", array("exception" => (isset($context["exception"]) ? $context["exception"] : null), "format" => "html"), false);
