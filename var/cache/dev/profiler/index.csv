@@ -32,3 +32,8 @@ c01f26,127.0.0.1,GET,http://localhost:8000/bundles/app/js/jquery.paginate.js,152
 fd5845,127.0.0.1,GET,http://localhost:8000/accueil,1527243368,,200
 58885f,127.0.0.1,GET,http://localhost:8000/bundles/app/js/jquery.paginate.js,1527243369,6c9adb,200
 6c9adb,127.0.0.1,GET,http://localhost:8000/bundles/app/js/jquery.paginate.js,1527243369,,404
+1d1a82,127.0.0.1,GET,http://localhost:8000/,1527250589,,200
+e379c2,127.0.0.1,GET,http://localhost:8000/bundles/app/js/jquery.paginate.js,1527250590,9bbdee,200
+9bbdee,127.0.0.1,GET,http://localhost:8000/bundles/app/js/jquery.paginate.js,1527250590,,404
+b5d6e9,127.0.0.1,GET,http://localhost:8000/bundles/app/js/jquery.paginate.js,1527250592,3d585d,200
+3d585d,127.0.0.1,GET,http://localhost:8000/bundles/app/js/jquery.paginate.js,1527250592,,404
