@@ -1,8 +1,6 @@
 Jobinder
 ========
 
-INfo en plus
-
 A Symfony project created on May 25, 2018, 9:07 am.
 
 L'application utilisera les API de Pôle Emploi, Geocoder et Leaflet pour respectivement :
