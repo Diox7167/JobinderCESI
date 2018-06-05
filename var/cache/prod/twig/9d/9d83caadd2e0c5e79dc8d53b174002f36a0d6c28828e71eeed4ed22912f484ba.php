@@ -31,10 +31,10 @@ class __TwigTemplate_692f1ba657aa1701f68b6fb22f219f5e1aef544b596be8fa40bb71169ac
         ";
         // line 6
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 15
+        // line 21
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 24
+        // line 38
         echo "        <link rel=\"icon\" type=\"image/x-icon\" href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("favicon.ico"), "html", null, true);
         echo "\" />
@@ -43,7 +43,7 @@ class __TwigTemplate_692f1ba657aa1701f68b6fb22f219f5e1aef544b596be8fa40bb71169ac
 
     <nav class=\"navbar navbar-expand-sm navbar-custom\">
         <a href=\"";
-        // line 29
+        // line 43
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("accueil");
         echo "\" class=\"navbar-brand\">JOBINDER</a>
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCustom\">
@@ -74,14 +74,12 @@ class __TwigTemplate_692f1ba657aa1701f68b6fb22f219f5e1aef544b596be8fa40bb71169ac
                 <div class=\"col-sm-12\">
                 <br>
         ";
-        // line 57
+        // line 71
         $this->displayBlock('body', $context, $blocks);
-        // line 59
+        // line 73
         echo "                </div>
             </div>
         </div>
-
-
     </body>
 </html>
 ";
@@ -113,42 +111,59 @@ class __TwigTemplate_692f1ba657aa1701f68b6fb22f219f5e1aef544b596be8fa40bb71169ac
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("bundles/app/css/main.css"), "html", null, true);
         echo "\" type =\"text/css\" />
 
+            <link rel=\"stylesheet\" href=\"https://unpkg.com/leaflet@1.3.1/dist/leaflet.css\"
+  integrity=\"sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==\"
+  crossorigin=\"\"/>
+
+
+
         ";
     }
 
-    // line 15
+    // line 21
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 16
+        // line 22
         echo "
+            <script src=\"https://unpkg.com/leaflet@1.3.1/dist/leaflet.js\"
+  integrity=\"sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==\"
+  crossorigin=\"\"></script>
+
             <script src =\"";
-        // line 17
+        // line 27
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("bundles/app/js/jquery-3.2.1.min.js"), "html", null, true);
         echo "\"></script>
             <script src =\"";
-        // line 18
+        // line 28
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("bundles/app/js/index.js"), "html", null, true);
         echo "\"></script>
             <script type=\"text/javascript\" src=\"";
-        // line 19
+        // line 29
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("bundles/app/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
             <script type=\"text/javascript\" src=\"";
-        // line 20
+        // line 30
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("bundles/app/js/main.js"), "html", null, true);
         echo "\"></script>
             <script type=\"text/javascript\" src=\"";
-        // line 21
+        // line 31
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("bundles/app/js/jquery.paginate.js"), "html", null, true);
         echo "\"></script>
+            <script type=\"text/javascript\" src=\"";
+        // line 32
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("bundles/app/js/script.js"), "html", null, true);
+        echo "\"></script>
+
+            
+
 
         ";
     }
 
-    // line 57
+    // line 71
     public function block_body($context, array $blocks = array())
     {
-        // line 58
+        // line 72
         echo "        ";
     }
 
@@ -164,7 +179,7 @@ class __TwigTemplate_692f1ba657aa1701f68b6fb22f219f5e1aef544b596be8fa40bb71169ac
 
     public function getDebugInfo()
     {
-        return array (  152 => 58,  149 => 57,  142 => 21,  138 => 20,  134 => 19,  130 => 18,  126 => 17,  123 => 16,  120 => 15,  113 => 12,  109 => 11,  104 => 9,  100 => 7,  97 => 6,  91 => 5,  80 => 59,  78 => 57,  47 => 29,  38 => 24,  35 => 15,  33 => 6,  29 => 5,  23 => 1,);
+        return array (  167 => 72,  164 => 71,  154 => 32,  150 => 31,  146 => 30,  142 => 29,  138 => 28,  134 => 27,  127 => 22,  124 => 21,  111 => 12,  107 => 11,  102 => 9,  98 => 7,  95 => 6,  89 => 5,  80 => 73,  78 => 71,  47 => 43,  38 => 38,  35 => 21,  33 => 6,  29 => 5,  23 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */

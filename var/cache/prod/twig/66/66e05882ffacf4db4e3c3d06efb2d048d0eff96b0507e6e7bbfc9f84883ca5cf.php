@@ -39,7 +39,7 @@ class __TwigTemplate_4b94a16b4347ad3a1e378f32040c6d1054e3a1b56b5522837f7206e5ee6
     <br>
     <button type=\"button\" class=\"btn btn-primary btn-lg\"><a href=\"#\">Se connecter / Changer de compte</a></button>
 \t<button type=\"button\" class=\"btn btn-secondary btn-lg\"><a href=\"#\">Page admin</a></button>
-\t<button type=\"button\" class=\"btn btn-secondary btn-lg\"><a href=\"#\">Page utilisateur</a></button>
+\t<button type=\"button\" class=\"btn btn-secondary btn-lg\" onclick=\"testDeScript()\"><a href=\"#\">Page utilisateur</a></button>
   </div>
 </div>
 
