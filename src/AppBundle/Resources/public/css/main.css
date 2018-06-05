@@ -32,3 +32,29 @@ body{
     min-height: 220px;
     background-repeat: no-repeat;
 }
+
+
+
+
+
+
+.localisationPoste{
+	font-style: italic;
+}
+
+.nomPoste{
+	font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+#mapid{ 
+	height: 180px; 
+}

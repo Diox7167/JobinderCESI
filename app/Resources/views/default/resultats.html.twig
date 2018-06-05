@@ -3,18 +3,50 @@
 
 <br>
 
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Accueil</h1>
-    <p class="lead">Bienvenue sur le célèbre Jobinder !</p>
-    <p class="lead">Envie de matcher avec une entreprise ? Ce site est fait pour toi !</p>
-    <br>
-    <button type="button" class="btn btn-primary btn-lg"><a href="#">Se connecter / Changer de compte</a></button>
-	<button type="button" class="btn btn-secondary btn-lg"><a href="#">Page admin</a></button>
-	<button type="button" class="btn btn-secondary btn-lg"><a href="#">Page utilisateur</a></button>
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+      <h1>Resultats de la recherche</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+    	<div class="list-group">
+		  <button type="button" class="list-group-item list-group-item-action active">
+		    <span class="nomPoste">Développeur Android</span>
+		    <span class="localisationPoste">DIJON</span>
+		  </button>
+		  <button type="button" class="list-group-item list-group-item-action">
+		  	<span class="nomPoste">Développeur Web</span>
+		  	<span class="localisationPoste">BEAUNE</span>
+		  </button>
+		  <button type="button" class="list-group-item list-group-item-action">
+		  	<span class="nomPoste">Chef de projet</span>
+		  	<span class="localisationPoste">BESANCON</span>
+		  </button>
+		  <button type="button" class="list-group-item list-group-item-action">
+		  	<span class="nomPoste">Automaticien</span>
+		  	<span class="localisationPoste">NANCY</span>
+		  </button>
+		  	<button type="button" class="list-group-item list-group-item-action">
+		  	<span class="nomPoste">Caissier</span>
+		  	<span class="localisationPoste">DIJON</span>
+		  </button>
+		</div>
+    </div>
+    <div class="col-md-9">
+    	<div id="mapid">
+
+    	</div> 
+    </div>
   </div>
 </div>
 
+
+
+<script type="text/javascript">
+  var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+</script>
 
 
 

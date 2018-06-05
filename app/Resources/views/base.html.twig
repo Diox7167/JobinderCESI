@@ -11,8 +11,14 @@
             <link rel="stylesheet" href ="{{ asset ('bundles/app/css/bootstrap-theme.min.css') }}" type ="text/css" />
             <link rel="stylesheet" href ="{{ asset ('bundles/app/css/main.css') }}" type ="text/css" />
 
+            <link rel="stylesheet" href="{{ asset ('bundles/app/css/leaflet.css') }}" />
+
+
+
         {% endblock %}
         {% block javascripts %}
+
+            <script src="{{ asset ('bundles/app/js/leaflet.js') }}"></script>
 
             <script src ="{{ asset ('bundles/app/js/jquery-3.2.1.min.js') }}"></script>
             <script src ="{{ asset ('bundles/app/js/index.js') }}"></script>
@@ -20,6 +26,9 @@
             <script type="text/javascript" src="{{ asset ('bundles/app/js/main.js') }}"></script>
             <script type="text/javascript" src="{{ asset ('bundles/app/js/jquery.paginate.js') }}"></script>
             <script type="text/javascript" src="{{ asset ('bundles/app/js/script.js') }}"></script>
+
+            
+
 
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
