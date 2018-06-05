@@ -76,12 +76,15 @@ class loginController extends Controller
         $form->handleRequest($request);
 
         // Traitement des données du formulaire
-       /* if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $user = $form->getData();
 
-            return $this->getUser(4);
-          //  return new Response('Pseudo : ' . $request->request->get('pseudo',$user->getPseudo()));
-        }*/
+            $userin = $this->getDoctrine()
+                ->getRepository('AppBundle:User')
+                ->find( $request->request->get('id',$user->getID()));
+
+            return new Response('User is in database: '.$userin->getPseudo());
+        }
 
 
         return $this->render('user/connexion.html.twig', array(
@@ -101,18 +104,6 @@ class loginController extends Controller
         return $this->render('user/allUsers.html.twig', array('data' => $users));
     }
 
-    public function getUserAction($id)
-    {
-        $user = $this->getDoctrine()
-            ->getRepository('AppBundle:User')
-            ->find($id);
 
-        if (!$user) {
-            throw $this->createNotFoundException(
-                'This user not found '
-            );
-        }
-        return new Response('User is in database: '.$user->getPseudo());
-    }
 
 }
