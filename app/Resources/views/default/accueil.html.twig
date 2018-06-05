@@ -6,12 +6,16 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">Accueil</h1>
-    <p class="lead">Bienvenue sur le célèbre Jobinder !</p>
-    <p class="lead">Envie de matcher avec une entreprise ? Ce site est fait pour toi !</p>
+    <div class="form-group">
+        {{ form(form) }}
+    </div>
+
     <br>
-    <button type="button" class="btn btn-primary btn-lg"><a href="#">Se connecter / Changer de compte</a></button>
-	<button type="button" class="btn btn-secondary btn-lg"><a href="#">Page admin</a></button>
-	<button type="button" class="btn btn-secondary btn-lg" onclick="testDeScript()"><a href="#">Page utilisateur</a></button>
+    <a href="{{ path('inscription') }}"><button type="button" class="btn btn-primary btn-lg">Register</button></a>
+    <a href="{{ path('connexion') }}"><button type="button" class="btn btn-secondary btn-lg">Log In</button></a>
+
+
+
   </div>
 </div>
 
