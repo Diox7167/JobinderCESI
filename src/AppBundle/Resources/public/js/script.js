@@ -1,0 +1,3 @@
+function testDeScript(){
+	alert('coucou');
+}
