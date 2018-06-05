@@ -43,6 +43,21 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
         }
         not_accueil:
 
+        // membre
+        if ('/membre' === $pathinfo) {
+            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::membreAction',  '_route' => 'membre',);
+        }
+
+        // inscription
+        if ('/inscription' === $pathinfo) {
+            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::inscriptionAction',  '_route' => 'inscription',);
+        }
+
+        // resultats
+        if ('/resultats' === $pathinfo) {
+            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::resultatsAction',  '_route' => 'resultats',);
+        }
+
         if ('/' === $pathinfo && !$allow) {
             throw new Symfony\Component\Routing\Exception\NoConfigurationException();
         }
