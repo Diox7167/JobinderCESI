@@ -26,5 +26,9 @@ body{
 
 
 #icoProfil{
-    background: url(../images/blankprofil.png)!important;
+    background-image: url(../images/blankprofil.png)!important;
+    background-size: cover;
+    height: auto;
+    min-height: 220px;
+    background-repeat: no-repeat;
 }
