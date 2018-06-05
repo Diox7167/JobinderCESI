@@ -16,5 +16,3 @@
 /vendor/
 /web/bundles/
 *.log
-var/logs/dev.log
-var/logs/dev.log
