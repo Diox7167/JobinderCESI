@@ -44,15 +44,21 @@
 
 
 
+<!----------------------------------- JS POUR LEAFLET -------------------------------------------->
+
 <script type="text/javascript">
+
+	<!-- INIT DE LA MAP -->
   	var mymap = L.map('mapid').setView([51.505, -0.09], 13);
 
-
+  	<!-- CHARGEMENT DE LA MAP DEPUIS UNE API GRATUITE -->
   	L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
               attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors', maxZoom: 18}).addTo(mymap);
 
+    <!-- POSITION DES MARKER -->
   	var marker = L.marker([51.5, -0.09]).addTo(mymap);
 
+	<!-- PLACEMENT DES MARKER ET MESSAGES -->
   	marker.bindPopup("<b>Hey !</b><br>Il y a du boulot ici.").openPopup();
 </script>
 
