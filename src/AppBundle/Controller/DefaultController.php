@@ -32,7 +32,7 @@ class DefaultController extends Controller
     }
 
 
-    /*
+    /**
      * @Route("/inscription", name="inscription")
      */
     public function inscriptionAction(Request $request)
