@@ -15,7 +15,7 @@
 !var/SymfonyRequirements.php
 /vendor/
 !vendor/autoload.php
-!vendor/composer/autoload_real.php
+!/vendor/composer/*
 /web/bundles/
 *.log
 *.swp
