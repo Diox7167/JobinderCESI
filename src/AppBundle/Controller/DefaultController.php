@@ -21,27 +21,10 @@ class DefaultController extends Controller
     public function accueilAction(Request $request)
     {
 
-        $user = new User();
-
-        $form = $this->createFormBuilder($user)
-            ->add('pseudo', TextType::class,array('label' => 'Name'))
-            ->add('mdp', TextType::class, array('label' => 'Password'))
-            ->add('Log In',SubmitType::class)
-            ->getForm();
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $user = $form->getData();
-
-            return new Response('Pseudo : ' . $request->request->get('pseudo',$user->getPseudo()));
-        }
-
-
-        return $this->render('default/accueil.html.twig', array(
-            'form' => $form->createView(),
-        ));
-
+        // replace this example code with whatever you need
+        return $this->render('default/accueil.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+        ]);
     }
 
     /**
@@ -54,11 +37,6 @@ class DefaultController extends Controller
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
         ]);
     }
-
-
-
-
-
 
     /**
      * @Route("/resultats", name="resultats")

@@ -22,42 +22,10 @@ class loginController extends Controller
     public function inscriptionAction(Request $request)
     {
 
-        $user = new User();
-
-        $form = $this->createFormBuilder($user)
-            ->add('pseudo', TextType::class,array('label' => 'Name'))
-            ->add('mdp', TextType::class, array('label' => 'Password'))
-            ->add('Adress', TextType::class, array('label' => 'Email'))
-            ->add('Register',SubmitType::class)
-            ->getForm();
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $user = $form->getData();
-
-            $pseudo = $request->request->get('pseudo',$user->getPseudo());
-            $mdp = $request->request->get('mdp',$user->getMDP());
-            $email = $request->request->get('Adress',$user->getAdress());
-
-
-            $userInsert = new User();
-            $userInsert->setPseudo($pseudo);
-            $userInsert->setMdp($mdp);
-            $userInsert->setAdress($email);
-
-            $doct = $this->getDoctrine()->getManager();
-            $doct->persist($userInsert);
-            $doct->flush();
-
-
-            return new Response('Vous etes inscrit : ' . $request->request->get('pseudo',$userInsert->getPseudo()));
-        }
-
-
-        return $this->render('default/inscription.html.twig', array(
-            'form' => $form->createView(),
-        ));
+        // replace this example code with whatever you need
+        return $this->render('default/membre.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+        ]);
     }
 
     /**
@@ -65,31 +33,10 @@ class loginController extends Controller
      */
     public function connexionAction(Request $request)
     {
-        $user = new User();
-
-        $form = $this->createFormBuilder($user)
-            ->add('pseudo', TextType::class,array('label' => 'Name'))
-            ->add('mdp', TextType::class, array('label' => 'Password'))
-            ->add('Log In',SubmitType::class)
-            ->getForm();
-
-        $form->handleRequest($request);
-
-        // Traitement des données du formulaire
-        if ($form->isSubmitted() && $form->isValid()) {
-            $user = $form->getData();
-
-            $userin = $this->getDoctrine()
-                ->getRepository('AppBundle:User')
-                ->find( $request->request->get('id',$user->getID()));
-
-            return new Response('User is in database: '.$userin->getPseudo());
-        }
-
-
-        return $this->render('user/connexion.html.twig', array(
-            'form' => $form->createView(),
-        ));
+        // replace this example code with whatever you need
+        return $this->render('default/membre.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+        ]);
     }
 
     /**

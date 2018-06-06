@@ -52,8 +52,8 @@
                         Authentification
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ path('connexion') }}">Connexion</a>
-                        <a class="dropdown-item" href="{{ path('inscription') }}">Inscription</a>
+                        <a class="dropdown-item" href="{{ path('fos_user_security_login') }}">Connexion</a>
+                        <a class="dropdown-item" href="{{ path('fos_user_registration_register') }}">Inscription</a>
                     </div>
                 </li>
 
@@ -63,6 +63,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ path('display') }}">Users list</a>
+                        <a class="dropdown-item" href="{{ path('resultats') }}"> MAP</a>
                     </div>
                 </li>
 
