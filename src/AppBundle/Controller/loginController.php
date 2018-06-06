@@ -11,26 +11,27 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
-class DefaultController extends Controller
+class loginController extends Controller
 {
 
     /**
-     * @Route("/", name="accueil")
+     * @Route("/inscription", name="inscription")
      */
-    public function accueilAction(Request $request)
+    public function inscriptionAction(Request $request)
     {
 
         // replace this example code with whatever you need
-        return $this->render('default/accueil.html.twig', [
+        return $this->render('default/membre.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
         ]);
     }
 
     /**
-     * @Route("/membre", name="membre")
+     * @Route("/connexion", name="connexion")
      */
-    public function membreAction(Request $request)
+    public function connexionAction(Request $request)
     {
         // replace this example code with whatever you need
         return $this->render('default/membre.html.twig', [
@@ -39,14 +40,17 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/resultats", name="resultats")
+     * @Route("/display", name="display")
      */
-    public function resultatsAction(Request $request)
+    public function displayUsersAction(Request $request)
     {
-        // replace this example code with whatever you need
-        return $this->render('default/resultats.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
+        $users = $this->getDoctrine()
+            ->getRepository('AppBundle:User')
+            ->findAll();
+
+        return $this->render('user/allUsers.html.twig', array('data' => $users));
     }
+
+
 
 }

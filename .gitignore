@@ -14,5 +14,8 @@
 !var/sessions/.gitkeep
 !var/SymfonyRequirements.php
 /vendor/
+!/vendor/autoload.php
 /web/bundles/
 *.log
+*.swp
+*~
