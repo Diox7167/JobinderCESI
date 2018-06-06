@@ -91,5 +91,62 @@
                 </div>
             </div>
         </div>
+
+
+
+
+        <footer>
+        <div class="row">
+            <div class="col-md-4">
+                <h2 class="text-center">Plan du site</h2>
+                <ul>
+                    <li>Accueil</li>
+                    <li>Inscription</li>
+                    <li>Connexion</li>
+                    <li>Espace membre</li>
+                    <li>Recherche</li>
+                    <li>Résultats</li>
+                    <li>Display</li>
+                </ul>
+
+            </div>
+
+            <div class="col-md-4 text-center">
+                <h2>Nous contacter</h2>
+
+            </div>
+
+            <div class="col-md-4 text-center">
+                <h2>Où sommes nous ?</h2>
+                <div id="mapcesi">
+
+                </div> 
+            </div>
+        </div>
+
+
+
+
+        </footer>
+
+        <!----------------------------------- JS POUR LEAFLET CESI -------------------------------------------->
+
+        <script type="text/javascript">
+
+            <!-- INIT DE LA MAP -->
+            var mymapcesi = L.map('mapcesi').setView([47.35863, 5.04501], 3);
+
+            <!-- CHARGEMENT DE LA MAP DEPUIS UNE API GRATUITE -->
+            L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+                      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors', maxZoom: 18}).addTo(mymapcesi);
+
+            <!-- POSITION DES MARKER -->
+            var markercesi = L.marker([47.35863, 5.04501]).addTo(mymapcesi);
+
+            <!-- PLACEMENT DES MARKER ET MESSAGES -->
+            markercesi.bindPopup("<b>Coucou !</b><br>Nous sommes ici.").openPopup();
+        </script>
     </body>
+
+
 </html>
