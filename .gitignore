@@ -16,6 +16,7 @@
 /vendor/
 !vendor/autoload.php
 !/vendor/composer/*
+!/vendor/friendsofsynfony/*
 /web/bundles/
 *.log
 *.swp

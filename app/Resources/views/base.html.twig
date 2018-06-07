@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}{% endblock %}</title>
         {% block stylesheets %}
 
             <!-- Latest compiled and minified CSS -->
@@ -52,8 +52,9 @@
                         Authentification
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ path('fos_user_security_login') }}">Connexion</a>
-                        <a class="dropdown-item" href="{{ path('fos_user_registration_register') }}">Inscription</a>
+                        <a class="dropdown-item" href="{{ path('fos_user_security_login') }}">Log In</a>
+                        <a class="dropdown-item" href="{{ path('fos_user_registration_register') }}">Register</a>
+                        <a class="dropdown-item" href="{{ path('fos_user_security_logout') }}">Log Out</a>
                     </div>
                 </li>
 
@@ -96,45 +97,6 @@
 
 
 
-        <footer>
-        <div class="row">
-            <div class="col-md-4">
-                <h2 class="text-center">Plan du site</h2>
-                <ul>
-                    <li><a href="{{ path('accueil') }}">Accueil</a></li>
-                    <li><a href="{{ path('inscription') }}">Inscription</a></li>
-                    <li><a href="{{ path('connexion') }}">Connexion</a></li>                    
-                    <li><a href="{{ path('membre') }}">Espace membre</a></li>
-                    <li><a href="#">Recherche</a></li>
-                    <li><a href="{{ path('resultats') }}">Résultats</a></li>
-                    <li><a href="{{ path('display') }}">Display</a></li>
-                </ul>
-
-            </div>
-
-            <div class="col-md-4">
-                <h2 class="text-center">Nous contacter</h2>
-                <ul>
-                    <li><a href="mailto:ghislain.bernard@viacesi.fr">Ghislain.Bernard@viacesi.fr</a></li>
-                    <li><a href="mailto:kevin.lecroller@viacesi.fr">Kevin.Lecroller@viacesi.fr</a></li>
-                    <li><a href="mailto:mouctar.diallo@viacesi.fr">Mouctar.Diallo@viacesi.fr</a></li>
-                </ul>
-                
-
-            </div>
-
-            <div class="col-md-4">
-                <h2 class="text-center">Où sommes nous ?</h2>
-                <div id="mapcesi">
-
-                </div> 
-            </div>
-        </div>
-
-
-
-
-        </footer>
 
         <!----------------------------------- JS POUR LEAFLET CESI -------------------------------------------->
 
