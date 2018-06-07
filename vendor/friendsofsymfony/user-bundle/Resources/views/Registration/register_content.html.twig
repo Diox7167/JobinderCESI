@@ -2,16 +2,10 @@
 
 {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
 
-    <div class="form-group" rows="2">
+    {{ form_widget(form) }}
+<div>
+    <input type="submit" value="{{ 'registration.submit'|trans }}" />
+</div>
+{{ form_end(form) }}
 
-        <div class="col-md-4">
-            {{ form_widget(form) }}
-            <div>
-                <input type="submit" value="{{ 'registration.submit'|trans }}" />
-            </div>
-            {{ form_end(form) }}
-
-        </div>
-
-
-    </div>
+{{ form_widget(form.username, { 'attr': {'class': 'bar'} }) }}
