@@ -50,7 +50,7 @@ class ProfileFormType extends AbstractType
         }
 
         $builder->add('current_password', PasswordType::class, array(
-            'label' => 'form.current_password',
+            'label' => 'form.current_passwor',
             'translation_domain' => 'FOSUserBundle',
             'mapped' => false,
             'constraints' => array(

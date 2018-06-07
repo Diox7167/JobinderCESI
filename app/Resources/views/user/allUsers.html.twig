@@ -1,4 +1,5 @@
 {% extends 'base.html.twig' %}
+{%  block title %} Users {%  endblock %}
 {% block body %}
 
     <style>
@@ -32,6 +33,7 @@
                 <td>{{ x.Username }}</td>
                 <td>{{ x.Email }}</td>
                 <td>{{ x.Password }}</td>
+                <td><input type="button" value="{{ x.Id }}"/></td>
 
             </tr>
         {% endfor %}

@@ -1,7 +1,7 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
 
+<<<<<<< Updated upstream
     {{ form_widget(form) }}
 <div>
     <input type="submit" value="{{ 'registration.submit'|trans }}" />
@@ -9,3 +9,20 @@
 {{ form_end(form) }}
 
 {{ form_widget(form.username, { 'attr': {'class': 'bar'} }) }}
+=======
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+
+
+<div class="form-group" rows="1">
+    <div class="col-md-4">
+        {{ form_widget(form) }}
+        <div>
+            <input type="submit" value="{{ 'registration.submit'|trans }}" />
+        </div>
+        {{ form_end(form) }}
+
+    </div>
+</div>
+
+
+>>>>>>> Stashed changes
