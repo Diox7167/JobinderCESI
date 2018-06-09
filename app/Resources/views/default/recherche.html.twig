@@ -3,27 +3,8 @@
 
 <br>
 
-<form>
-  <div class="form-group">
-    <label for="inputJob">Job</label>
-    <input type="job" class="form-control" id="exampleInputJob1" aria-describedby="jobHelp" placeholder="Enter a Job">
-    <small id="jobHelp" class="form-text text-muted">Informatique, développeur, chef de projet...</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputVille1">City</label>
-    <input type="ville" class="form-control" id="exampleInputVille1" placeholder="Enter a city">
-  </div>
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Save results</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-
-
-
-
-
-
+    <div row justify>
+    {{ form(form) }}
+    <div class="form-group" rows="5">
 
 {% endblock %}
