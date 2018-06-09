@@ -36,7 +36,7 @@ class RechercheController extends Controller{
     		$job = $recherche->getJob();
 
     		$jobinderResearch = new jobinderResearch();
-    		$jsonResult = jobinderResearch->getJobs($recherche);
+    		$jsonResult = $jobinderResearch->getJobs($recherche);
     		$parsedResult = json_decode($jsonResult);
 
     		return $this->render('default/resultats.html.twig', array('result'=>$parsedResult));
