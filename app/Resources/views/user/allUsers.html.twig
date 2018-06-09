@@ -1,43 +1,28 @@
 {% extends 'base.html.twig' %}
 {%  block title %} Users {%  endblock %}
 {% block body %}
-
-    <style>
-        .table {
-            border-collapse: collapse;
-            margin: auto;
-        }
-        .table th, td {
-            border-bottom: 1px solid #ddd;
-            width: 250px;
-            text-align: center;
-            align: left;
-        }
-        h2{
-            margin-left: 40%;
-        }
-    </style>
-
-    <h2>Users in database</h2>
-    <table class = "table">
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Token</th>
-            <th>Role</th>
-        </tr>
+    <div class="container">
+        <h2>The all users</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
         {% for x in data %}
             <tr>
                 <td>{{ x.Id }}</td>
                 <td>{{ x.Username }}</td>
                 <td>{{ x.Email }}</td>
-                <td>{{ x.Password }}</td>
-                <td><input type="button" value="{{ x.Id }}"/></td>
 
             </tr>
         {% endfor %}
-    </table>
-
+            </tbody>
+        </table>
+    </div>
 
 {% endblock %}
