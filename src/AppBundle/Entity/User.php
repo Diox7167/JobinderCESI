@@ -20,6 +20,9 @@ class User extends BaseUser {
     {
         parent::__construct();
         // your own logic
+        $this->roles = [
+            'ROLE_USER'
+        ];
     }
     /**
      * Get id
