@@ -10,6 +10,8 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Role</th>
+                    <th>Editer</th>
+                    <th>Supprimer</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,7 +21,8 @@
                 <td>{{ x.Username }}</td>
                 <td>{{ x.Email }}</td>
                 <td>{{ x.Roles[0] }}</td>
-
+                <td><a href="{{ path('editUser', {'id': x.id}) }}">Edit</a></td>
+                <td><a href="{{ path('deleteUser', {'id': x.id}) }}">Delete</a></td>
             </tr>
         {% endfor %}
             </tbody>

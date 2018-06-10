@@ -42,8 +42,36 @@ class loginController extends Controller
     /**
      * @Route("/display", name="display")
      */
-    public function displayUsersAction(Request $request)
+    public function displayUsersAction()
     {
+        $users = $this->getDoctrine()
+            ->getRepository('AppBundle:User')
+            ->findAll();
+
+        return $this->render('user/allUsers.html.twig', array('data' => $users));
+    }
+
+    /**
+     * @Route("/edit/{id}", name="editUser")
+     */
+    public function editUsersAction(User $user)
+    {
+
+        return $this->redirectToRoute('fos_user_profile_edit');
+
+    }
+
+    /**
+     * @Route("/deleteUser/{id}", name="deleteUser")
+     */
+    public function deleteUsersAction(User $user)
+    {
+        //Suppression du user courant
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($user);
+        $em->flush();
+
+        //actualiser la liste de users
         $users = $this->getDoctrine()
             ->getRepository('AppBundle:User')
             ->findAll();
