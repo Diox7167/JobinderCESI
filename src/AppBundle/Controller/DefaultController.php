@@ -28,13 +28,13 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/admin", name="accueil")
+     * @Route("/admin", name="admin")
      */
     public function aadminAction(Request $request)
     {
 
         // replace this example code with whatever you need
-        return $this->render('default/accueil.html.twig', [
+        return $this->render('default/admin.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
         ]);
     }

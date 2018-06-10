@@ -1,1 +1,5 @@
-<h1>Page admin</h1>
+{% if is_granted('ROLE_ADMIN') %}
+    <h1>Page admin</h1>
+{% endif %}
+
+
