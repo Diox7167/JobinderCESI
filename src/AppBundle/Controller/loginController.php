@@ -4,6 +4,8 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\User;
 
+use AppBundle\Form\UserType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -13,31 +15,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+
+
 class loginController extends Controller
 {
-
-    /**
-     * @Route("/inscription", name="inscription")
-     */
-    public function inscriptionAction(Request $request)
-    {
-
-        // replace this example code with whatever you need
-        return $this->render('default/membre.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
-    }
-
-    /**
-     * @Route("/connexion", name="connexion")
-     */
-    public function connexionAction(Request $request)
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/membre.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
-    }
 
     /**
      * @Route("/display", name="display")
@@ -54,12 +35,47 @@ class loginController extends Controller
     /**
      * @Route("/edit/{id}", name="editUser")
      */
-    public function editUsersAction(User $user)
+    public function editUsersAction(Request $request, User $user)
     {
 
-        return $this->redirectToRoute('fos_user_profile_edit');
+        $form = $this->createFormBuilder($user)
+            ->add('email', TextType::class,array('label' => 'Email'))
+            ->add('username', TextType::class,array('label' => 'Username'))
+            ->add('roles',ChoiceType::class,[
+                'multiple'       => true,
+                'expanded'       => true,
+                'choices'        => [
+                    'admin'      => 'ROLE_ADMIN',
+                    'user'       => 'ROLE_USER',
+                    'moderator'  => 'ROLE_MORDERATOR'
+                ]
+            ])
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+           $user = $form->getData();
+           $em = $this->getDoctrine()->getManager();
+           $post = $em->getRepository('AppBundle:User')->find($user->getId());
+           $post->setUsername($user->getUsername());
+           $post->setEmail($user->getEmail());
+           //ici gerer les roles
+           $em->flush();
+
+            $users = $this->getDoctrine()
+                ->getRepository('AppBundle:User')
+                ->findAll();
+
+            return $this->render('user/allUsers.html.twig', array('data'=>$users));
+        }
+
+        return $this->render('user/editUser.html.twig', array('form' => $form->createView(),
+        ));
 
     }
+
 
     /**
      * @Route("/deleteUser/{id}", name="deleteUser")
@@ -77,6 +93,29 @@ class loginController extends Controller
             ->findAll();
 
         return $this->render('user/allUsers.html.twig', array('data' => $users));
+    }
+
+    /**
+     * @Route("/showUser/{id}", name="showUser")
+     */
+    public function showUsersAction(User $user)
+    {
+        $form = $this->createFormBuilder(UserType::class, $user);
+        //Recuperation du user courant
+
+
+        return $this->render('user/showUsers.html.twig', array([
+            'user' => $user,
+            'form' => $form
+        ]));
+    }
+
+    /**
+     * @Route("/denied}", name="denied")
+     */
+    public function deniedAction()
+    {
+        return $this->render('default/denied.html.twig');
     }
 
 

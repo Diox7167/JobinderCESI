@@ -2,7 +2,7 @@
 {%  block title %} Users {%  endblock %}
 {% block body %}
     <div class="container">
-        <h2>The all users</h2>
+        <h2>View users</h2>
         <table class="table">
             <thead>
                 <tr>
@@ -12,6 +12,7 @@
                     <th>Role</th>
                     <th>Editer</th>
                     <th>Supprimer</th>
+                    <th>Afficher</th>
                 </tr>
             </thead>
             <tbody>
@@ -23,6 +24,7 @@
                 <td>{{ x.Roles[0] }}</td>
                 <td><a href="{{ path('editUser', {'id': x.id}) }}">Edit</a></td>
                 <td><a href="{{ path('deleteUser', {'id': x.id}) }}">Delete</a></td>
+                <td><a href="{{ path('showUser', {'id': x.id}) }}">Show</a></td>
             </tr>
         {% endfor %}
             </tbody>
