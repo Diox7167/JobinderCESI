@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+{%  block title %} Edit User {%  endblock %}
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <h5 class="card-title">Editer :  </h5>
+            <div class="card">
+                <div class="card-body">
+
+
+
+                    <div class="container">
+                        {{ form_start(form) }}
+
+                        <div class="form-group">
+                            {{ form_row(form.email, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_row(form.username, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+
+
+                            {{ form_row(form.roles) }}
+
+
+                        <input  class="btn btn-primary btn-lg" type="submit" value="{{ 'Send'|trans }}" />
+
+                        {{ form_end(form) }}
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
