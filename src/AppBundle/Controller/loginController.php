@@ -29,6 +29,12 @@ class loginController extends Controller
             ->getRepository('AppBundle:User')
             ->findAll();
 
+        if (!$users) {
+            throw $this->createNotFoundException(
+                'Pas de données dans la base '
+            );
+        }
+
         return $this->render('user/allUsers.html.twig', array('data' => $users));
     }
 
