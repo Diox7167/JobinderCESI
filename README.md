@@ -23,6 +23,25 @@ https://www.emploi-store-dev.fr/portail-developpeur/catalogueapi
 https://leafletjs.com/
 https://geocoder.opencagedata.com/
 
-API Pole Emploi:
+Tokens API Pole Emploi:
 Identifiant : PAR_jobinder_0177f48ab1c53cf82653eb0bdb87104e7c12fc084019ae41139e2e709d92c6bc
 Clé secrète : 7cea572bfe4721915135fa22213b9805172a066bbb667314d3ecdb82be5f5259
+
+Installation:
+git clone https://github.com/Diox7167/JobinderCESI
+Copier via clef USB les éléments manquants du dossier vendor
+modifier le parameters.yml
+Créer une BDD jobinder
+lancer la commande : php bin/console doctrine:schema:update --force
+
+Commandes GIT :
+git flow init (laisser les paramètres par défautet appuyer sur entrée autant de fois que nécessaire)
+git flow feature start <nom_de_la_branche>
+git add .
+git commit -m""
+git flow feature finish
+
+git pull
+git fetch
+git stash
+git pop
