@@ -21,7 +21,12 @@
                 <td>{{ x.Id }}</td>
                 <td>{{ x.Username }}</td>
                 <td>{{ x.Email }}</td>
-                <td>{{ x.Roles[0] }}</td>
+                <td>
+                    {%  for role in x.Roles %}
+                        {{ role }}<br/>
+                        {% endfor %}
+
+                </td>
                 <td><a href="{{ path('editUser', {'id': x.id}) }}">Edit</a></td>
                 <td><a href="{{ path('deleteUser', {'id': x.id}) }}">Delete</a></td>
                 <td><a href="{{ path('showUser', {'id': x.id}) }}">Show</a></td>
