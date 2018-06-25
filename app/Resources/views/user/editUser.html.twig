@@ -20,8 +20,13 @@
                             {{ form_row(form.username, {'attr': {'class': 'form-control'}}) }}
                         </div>
 
+                        <div class="list-group">
+                            {% for role in form.roles %}
+                                <a href="#" class="list-group-item">{{ form_row(role) }}</a>
+                            {% endfor %}
+                        </div>
 
-                            {{ form_row(form.roles) }}
+
 
 
                         <input  class="btn btn-primary btn-lg" type="submit" value="{{ 'Send'|trans }}" />

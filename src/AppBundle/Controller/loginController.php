@@ -21,7 +21,7 @@ class loginController extends Controller
 {
 
     /**
-     * @Route("/display", name="display")
+     * @Route("/user/display", name="display")
      */
     public function displayUsersAction()
     {
@@ -33,7 +33,7 @@ class loginController extends Controller
     }
 
     /**
-     * @Route("/edit/{id}", name="editUser")
+     * @Route("/user/edit/{id}", name="editUser")
      */
     public function editUsersAction(Request $request, User $user)
     {
@@ -78,7 +78,7 @@ class loginController extends Controller
 
 
     /**
-     * @Route("/deleteUser/{id}", name="deleteUser")
+     * @Route("/user/deleteUser/{id}", name="deleteUser")
      */
     public function deleteUsersAction(User $user)
     {
@@ -96,7 +96,7 @@ class loginController extends Controller
     }
 
     /**
-     * @Route("/showUser/{id}", name="showUser")
+     * @Route("/user/show/{id}", name="showUser")
      */
     public function showUsersAction(User $user)
     {
@@ -104,9 +104,8 @@ class loginController extends Controller
         //Recuperation du user courant
 
 
-        return $this->render('user/showUsers.html.twig', array([
-            'user' => $user,
-            'form' => $form
+        return $this->render('user/user.html.twig', array([
+            'user' => $user
         ]));
     }
 
