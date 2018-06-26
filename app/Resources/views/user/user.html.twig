@@ -1,4 +1,17 @@
-<ul>
-    <li>{{ user.username }}</li>
-    <li>{{ user.email }}</li>
-</ul>
+{% extends 'base.html.twig' %}
+{%  block title %} SHOW {%  endblock %}
+{% block body %}
+    <ul>
+        <li>{{ user.username }}</li>
+        <li>{{ user.email }}</li>
+        <li>Roles :
+            <ol>
+                {%  for role in user.Roles %}
+                    <li>
+                        {{ role }}
+                    </li>
+                {% endfor %}
+            </ol>
+        </li>
+    </ul>
+{% endblock %}

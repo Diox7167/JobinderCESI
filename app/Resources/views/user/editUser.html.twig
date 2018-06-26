@@ -20,12 +20,12 @@
                             {{ form_row(form.username, {'attr': {'class': 'form-control'}}) }}
                         </div>
 
-                        <div class="list-group">
+                        <div class="form-check">
                             {% for role in form.roles %}
-                                <a href="#" class="list-group-item">{{ form_row(role) }}</a>
+                                <label class="form-check-label" for="checkbox100">{{ form_row(role) }}</label>
                             {% endfor %}
-                        </div>
 
+                        </div>
 
 
 
