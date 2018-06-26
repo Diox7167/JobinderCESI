@@ -53,7 +53,7 @@ class loginController extends Controller
                 'choices'        => [
                     'admin'      => 'ROLE_ADMIN',
                     'user'       => 'ROLE_USER',
-                    'moderator'  => 'ROLE_MORDERATOR'
+                    'moderator'  => 'ROLE_MODERATOR'
                 ]
             ])
             ->getForm();
