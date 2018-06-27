@@ -40,6 +40,13 @@ body{
     background-repeat: no-repeat;
 }
 
+#logoJobinder{
+    background-image: url(../images/logoJobinder.png)!important;
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+    background-repeat: no-repeat;
+}
 
 
 
