@@ -3,8 +3,32 @@
 
 <br>
 
-    <div row justify>
-    {{ form(form) }}
-    <div class="form-group" rows="5">
+    <div class="row">
+        <div class="col-md-12">
+            <h5 class="card-title">Formulaire de recherche :  </h5>
+            <div class="card">
+                <div class="card-body">
+
+                    <form action="{{ path("recherche") }}" method="post">
+                        <div class="form-group">
+                            <label for="username">{{ 'city'|trans }}</label>
+                            <input type="text" class="form-control" id="city" name="_city"  />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="username">{{ 'job'|trans }}</label>
+                            <input type="text" class="form-control" id="job" name="_job"  />
+                        </div>
+
+
+                        <input class="btn btn-primary" type="submit" id="submit" name="_submit" value="{{ 'Submit'|trans }}" />
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 {% endblock %}

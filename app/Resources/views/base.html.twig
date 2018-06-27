@@ -59,6 +59,7 @@
                             <a class="dropdown-item" href="{{ path('fos_user_security_login') }}">Log In</a>
                             <a class="dropdown-item" href="{{ path('fos_user_registration_register') }}">Register</a>
                         </div>
+
                     </li>
                 </ul>
             </div>
@@ -84,8 +85,6 @@
                             Authentification
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ path('fos_user_security_login') }}">Log In</a>
-                            <a class="dropdown-item" href="{{ path('fos_user_registration_register') }}">Register</a>
                             <a class="dropdown-item" href="{{ path('fos_user_security_logout') }}">Log Out</a>
                             <a class="dropdown-item" href="{{ path('fos_user_profile_edit') }}">Edit Profil</a>
                             <a class="dropdown-item" href="{{ path('fos_user_change_password') }}">Change Password</a>
@@ -98,8 +97,9 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ path('resultats') }}"> MAP</a>
+                            <a class="dropdown-item" href="{{ path('recherche') }}"> Recherche</a>
                             {% if is_granted('ROLE_ADMIN') %}
-                                <a class="dropdown-item" href="{{ path('display') }}">Users list</a>
+                                <a class="dropdown-item" href="{{ path('display') }}">Gestion des utilisateurs</a>
                                 <a class="dropdown-item" href="{{ path('admin') }}"> Page Admin</a>
                             {% endif %}
                         </div>

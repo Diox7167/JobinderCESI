@@ -45,15 +45,15 @@ class loginController extends Controller
     {
 
         $form = $this->createFormBuilder($user)
-            ->add('email', TextType::class,array('label' => 'Email'))
-            ->add('username', TextType::class,array('label' => 'Username'))
+            ->add('email', TextType::class,array('label' => 'Email', 'disabled' => true))
+            ->add('username', TextType::class,array('label' => 'Username', 'disabled' => true))
             ->add('roles',ChoiceType::class,[
                 'multiple'       => true,
                 'expanded'       => true,
                 'choices'        => [
                     'admin'      => 'ROLE_ADMIN',
                     'user'       => 'ROLE_USER',
-                    'moderator'  => 'ROLE_MORDERATOR'
+                    'moderator'  => 'ROLE_MODERATOR'
                 ]
             ])
             ->getForm();
@@ -106,13 +106,16 @@ class loginController extends Controller
      */
     public function showUsersAction(User $user)
     {
-        $form = $this->createFormBuilder(UserType::class, $user);
-        //Recuperation du user courant
+
+        $em = $this->getDoctrine()->getManager();
+        $post = $em->getRepository('AppBundle:User')->find($user->getId());
+        //ici gerer les roles
+        $em->flush();
 
 
-        return $this->render('user/user.html.twig', array([
-            'user' => $user
-        ]));
+        return $this->render('default/membre.html.twig', array(
+            'user' => $post
+        ));
     }
 
     /**

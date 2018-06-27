@@ -1,0 +1,31 @@
+body{
+    background: url(https://images.pexels.com/photos/612881/pexels-photo-612881.jpeg?auto=compress&cs=tinysrgb&h=350);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+
+.navbar-custom {
+    background-color: #0081e0;
+}
+
+.navbar a{
+    color: #ffffff;
+}
+
+.navbar{
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.75);
+}
+
+
+
+.dropdown-menu a{
+    color: black;
+}
+
+.btn a{
+    color: #ffffff;
+}

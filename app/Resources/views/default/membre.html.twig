@@ -39,11 +39,22 @@
             </li>
           </ul>
         </div>
+
         <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <div class="card-body">
+            <p class="card-text">
+                {{ user.username }}<br/>
+                {{ user.email }} <br/>
+                {%  for role in user.Roles %}
+                  {{ role }}<br/>
+                {% endfor %}
+            </p>
+
         </div>
+
+
+
+      </div>
       </div>
     </div>
   </div>
