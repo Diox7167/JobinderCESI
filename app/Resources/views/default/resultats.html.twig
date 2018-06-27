@@ -1,197 +1,221 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 
-<br>
+	<br>
 
-  <div class="row">
-    <div class="col text-center">
-      <h1>Resultats de la recherche : </h1>
-    </div>
-  </div>
-
-  <br>
-
-  <div class="row">
-  	<div class="col-md-12">
-  		<div class="card">
-		  <div class="card-body">
-		    <h5 class="card-title">Votre recherche :  </h5>
-		    <div class="row" class="justify">
-	    		{{ form(form) }}
-    		<div class="form-group" rows="5">
-		  </div>
+	<div class="row">
+		<div class="col text-center">
+			<h1>Resultats de la recherche : </h1>
 		</div>
-  	</div>
-  </div>
+	</div>
 
-  <br>
-
-  <div class="row">
-    <div class="col-md-3">
-    	<div class="list-group">
+	<br>
 
 
-    	
+
+	<div class="row">
+		<div class="col-md-12">
+			<h5 class="card-title">Votre recherche ici  </h5>
+			<div class="card">
+				<div class="card-body">
+
+
+
+					<div class="container">
+                        {{ form_start(form) }}
+
+						<div class="form-group">
+                            {{ form_row(form.city, {'attr': {'class': 'form-control'}}) }}
+						</div>
+
+						<div class="form-group">
+                            {{ form_row(form.job, {'attr': {'class': 'form-control'}}) }}
+						</div>
+
+
+                        {{ form_end(form) }}
+
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+	<br>
+
+	<div class="row">
+		<div class="col-md-3">
+			<div class="list-group">
+
+
+
+
+
+
+                {% for job in jobs %}
+					<button type="button" class="list-group-item list-group-item-action btnEntreprise" href="{{job['offerId']}}">
+						<span class="nomPoste">{{job['companyName']}}</span>
+						<span class="localisationPoste">{{job['contractTypeCode']}}</span>
+					</button>
+					<script type="text/javascript">
+                        var test = '{{job['contractTypeCode']}}'
+                        var bloc = document.getElementById("nomEntreprise");
+                        var addData = "<div id="{{job['offerId']}}">{{job['offerId']}}</div>";
+                        addData.style.display = "none";
+                        bloc.innerHtml(addData);
+
+
+					</script>
+                {% endfor %}
+
+
+
+
+
+
+				<nav aria-label="Page navigation example">
+					<ul class="pagination">
+						<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+						<li class="page-item"><a class="page-link" href="#">1</a></li>
+						<li class="page-item"><a class="page-link" href="#">2</a></li>
+						<li class="page-item"><a class="page-link" href="#">3</a></li>
+						<li class="page-item"><a class="page-link" href="#">Next</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<div class="col-md-9">
+			<div id="mapid">
+
+			</div>
+		</div>
+	</div>
+
+	<br>
+
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="accordion" id="accordion">
+				<div class="card">
+					<div class="card-header" id="headingOne">
+						<h5 class="mb-0">
+							<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+								Information sur l'entreprise
+							</button>
+						</h5>
+					</div>
+
+					<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+						<div class="card-body">
+							<ul>
+								<li id="nomEntreprise">Nom de l'entrprise : </li>
+								<li>Localisation : </li>
+								<li>Chiffre d'affaire : </li>
+								<li>Nombre d'employés : </li>
+								<li>Site officiel : </li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header" id="headingTwo">
+						<h5 class="mb-0">
+							<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+								Informations sur le poste concerné
+							</button>
+						</h5>
+					</div>
+					<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+						<div class="card-body">
+							<ul>
+								<li>Nom du poste : </li>
+								<li>Type de contrat : </li>
+								<li>Durée mission : </li>
+								<li>Salaire : </li>
+								<li>Missions : </li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header" id="headingThree">
+						<h5 class="mb-0">
+							<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+								Contacter l'entreprise
+							</button>
+						</h5>
+					</div>
+					<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+						<div class="card-body">
+							Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<!----------------------------------- JS POUR LEAFLET -------------------------------------------->
+
+	<script type="text/javascript">
+
+        <!-- INIT DE LA MAP -->
+        var mymap = L.map('mapid').setView([{{jobs[0]['gpsLatitude']}}, {{jobs[0]['gpsLongitude']}}], 9);
+
+
+
+
+        <!-- CHARGEMENT DE LA MAP DEPUIS UNE API GRATUITE -->
+        L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors', maxZoom: 18}).addTo(mymap);
+
 
 
 
         {% for job in jobs %}
-            <button type="button" class="list-group-item list-group-item-action btnEntreprise" href="{{job['offerId']}}">
-              <span class="nomPoste">{{job['companyName']}}</span>
-              <span class="localisationPoste">{{job['contractTypeCode']}}</span>
-            </button>
-            <script type="text/javascript">
-            	var test = '{{job['contractTypeCode']}}'
-            	var bloc = document.getElementById("nomEntreprise");
-            	var addData = "<div id="{{job['offerId']}}">{{job['offerId']}}</div>";
-            	addData.style.display = "none";
-            	bloc.innerHtml(addData);
+        <!-- POSITION DES MARKER -->
+        var marker = L.marker([{{job['gpsLatitude']}}, {{job['gpsLongitude']}}]).addTo(mymap);
 
-
-            </script>
+        <!-- PLACEMENT DES MARKER ET MESSAGES -->
+        marker.bindPopup("<b>{{job['companyName']}}</b><br>Il y a du boulot ici.").openPopup();
         {% endfor %}
-        
-
-		
-
-
-
-		  <nav aria-label="Page navigation example">
-		  <ul class="pagination">
-		    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-		    <li class="page-item"><a class="page-link" href="#">1</a></li>
-		    <li class="page-item"><a class="page-link" href="#">2</a></li>
-		    <li class="page-item"><a class="page-link" href="#">3</a></li>
-		    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-		  </ul>
-		</nav>
-		</div>
-    </div>
-    <div class="col-md-9">
-    	<div id="mapid">
-
-    	</div> 
-    </div>
-  </div>
-
-  <br>
-
-
-  <div class="row">
-  	<div class="col-md-12">
-  		<div class="accordion" id="accordion">
-			  <div class="card">
-			    <div class="card-header" id="headingOne">
-			      <h5 class="mb-0">
-			        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-			          Information sur l'entreprise
-			        </button>
-			      </h5>
-			    </div>
-
-			    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-			      <div class="card-body">
-				      <ul>
-				      	<li id="nomEntreprise">Nom de l'entrprise : </li>
-				      	<li>Localisation : </li>
-				      	<li>Chiffre d'affaire : </li>
-				      	<li>Nombre d'employés : </li>
-				      	<li>Site officiel : </li>
-				      </ul>
-			      </div>
-			    </div>
-			  </div>
-			  <div class="card">
-			    <div class="card-header" id="headingTwo">
-			      <h5 class="mb-0">
-			        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-			          Informations sur le poste concerné
-			        </button>
-			      </h5>
-			    </div>
-			    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-			      <div class="card-body">
-			        <ul>
-				      	<li>Nom du poste : </li>
-				      	<li>Type de contrat : </li>
-				      	<li>Durée mission : </li>
-				      	<li>Salaire : </li>
-				      	<li>Missions : </li>
-				      </ul>
-			      </div>
-			    </div>
-			  </div>
-			  <div class="card">
-			    <div class="card-header" id="headingThree">
-			      <h5 class="mb-0">
-			        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-			          Contacter l'entreprise
-			        </button>
-			      </h5>
-			    </div>
-			    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-			      <div class="card-body">
-			        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-			      </div>
-			    </div>
-			  </div>
-		</div>
-  	</div>
-  </div>
-
-
-
-
-<!----------------------------------- JS POUR LEAFLET -------------------------------------------->
-
-<script type="text/javascript">
-
-	<!-- INIT DE LA MAP -->
-  	var mymap = L.map('mapid').setView([{{jobs[0]['gpsLatitude']}}, {{jobs[0]['gpsLongitude']}}], 9);
-
-
-
-
-  	<!-- CHARGEMENT DE LA MAP DEPUIS UNE API GRATUITE -->
-  	L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-              attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors', maxZoom: 18}).addTo(mymap);   
-
-
-
-
-	{% for job in jobs %}
-		<!-- POSITION DES MARKER -->
-	  	var marker = L.marker([{{job['gpsLatitude']}}, {{job['gpsLongitude']}}]).addTo(mymap);
-
-	  	<!-- PLACEMENT DES MARKER ET MESSAGES -->
-  		marker.bindPopup("<b>{{job['companyName']}}</b><br>Il y a du boulot ici.").openPopup();
-	{% endfor %}  	
 
 
 
 
 
-	
-
-
-
-$( ".btnEntreprise" ).click(function() {
-
-  	id = this.getAttribute("href");
-  	var ladiv = document.getElementById(this.getAttribute("href"));
-  	ladiv.style.display = "block";
-
- 	
-});
 
 
 
 
-</script>
+        $( ".btnEntreprise" ).click(function() {
+
+            id = this.getAttribute("href");
+            var ladiv = document.getElementById(this.getAttribute("href"));
+            ladiv.style.display = "block";
+
+
+        });
 
 
 
-	
+
+	</script>
+
+
+
+
 
 
 {% endblock %}

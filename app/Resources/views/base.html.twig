@@ -97,7 +97,6 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ path('resultats') }}"> MAP</a>
-                            <a class="dropdown-item" href="{{ path('recherche') }}"> Recherche</a>
                             {% if is_granted('ROLE_ADMIN') %}
                                 <a class="dropdown-item" href="{{ path('display') }}">Gestion des utilisateurs</a>
                                 <a class="dropdown-item" href="{{ path('admin') }}"> Page Admin</a>
