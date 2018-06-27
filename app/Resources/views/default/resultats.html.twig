@@ -16,9 +16,9 @@
   		<div class="card">
 		  <div class="card-body">
 		    <h5 class="card-title">Votre recherche :  </h5>
-		    <p class="card-text">Poste : </p>
-		    <p class="card-text">Localisation : </p>
-		    <a href="#" class="btn btn-primary">Recommencer</a>
+		    <div class="row" class="justify">
+	    		{{ form(form) }}
+    		<div class="form-group" rows="5">
 		  </div>
 		</div>
   	</div>
@@ -29,26 +29,42 @@
   <div class="row">
     <div class="col-md-3">
     	<div class="list-group">
-		  <button type="button" class="list-group-item list-group-item-action active">
-		    <span class="nomPoste">Développeur Android</span>
-		    <span class="localisationPoste">DIJON</span>
-		  </button>
-		  <button type="button" class="list-group-item list-group-item-action">
-		  	<span class="nomPoste">Développeur Web</span>
-		  	<span class="localisationPoste">BEAUNE</span>
-		  </button>
-		  <button type="button" class="list-group-item list-group-item-action">
-		  	<span class="nomPoste">Chef de projet</span>
-		  	<span class="localisationPoste">BESANCON</span>
-		  </button>
-		  <button type="button" class="list-group-item list-group-item-action">
-		  	<span class="nomPoste">Automaticien</span>
-		  	<span class="localisationPoste">NANCY</span>
-		  </button>
-		  	<button type="button" class="list-group-item list-group-item-action">
-		  	<span class="nomPoste">Caissier</span>
-		  	<span class="localisationPoste">DIJON</span>
-		  </button>
+
+
+    	
+
+
+
+        {% for job in jobs %}
+            <button type="button" class="list-group-item list-group-item-action btnEntreprise" href="{{job['offerId']}}">
+              <span class="nomPoste">{{job['companyName']}}</span>
+              <span class="localisationPoste">{{job['contractTypeCode']}}</span>
+            </button>
+            <script type="text/javascript">
+            	var test = '{{job['contractTypeCode']}}'
+            	var bloc = document.getElementById("nomEntreprise");
+            	var addData = "<div id="{{job['offerId']}}">{{job['offerId']}}</div>";
+            	addData.style.display = "none";
+            	bloc.innerHtml(addData);
+
+
+            </script>
+        {% endfor %}
+        
+
+		
+
+
+
+		  <nav aria-label="Page navigation example">
+		  <ul class="pagination">
+		    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+		    <li class="page-item"><a class="page-link" href="#">1</a></li>
+		    <li class="page-item"><a class="page-link" href="#">2</a></li>
+		    <li class="page-item"><a class="page-link" href="#">3</a></li>
+		    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+		  </ul>
+		</nav>
 		</div>
     </div>
     <div class="col-md-9">
@@ -76,7 +92,7 @@
 			    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
 			      <div class="card-body">
 				      <ul>
-				      	<li>Nom de l'entrprise : </li>
+				      	<li id="nomEntreprise">Nom de l'entrprise : </li>
 				      	<li>Localisation : </li>
 				      	<li>Chiffre d'affaire : </li>
 				      	<li>Nombre d'employés : </li>
@@ -131,22 +147,51 @@
 <script type="text/javascript">
 
 	<!-- INIT DE LA MAP -->
-  	var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+  	var mymap = L.map('mapid').setView([{{jobs[0]['gpsLatitude']}}, {{jobs[0]['gpsLongitude']}}], 9);
+
+
+
 
   	<!-- CHARGEMENT DE LA MAP DEPUIS UNE API GRATUITE -->
   	L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-              attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors', maxZoom: 18}).addTo(mymap);
+              attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors', maxZoom: 18}).addTo(mymap);   
 
-    <!-- POSITION DES MARKER -->
-  	var marker = L.marker([51.5, -0.09]).addTo(mymap);
 
-	<!-- PLACEMENT DES MARKER ET MESSAGES -->
-  	marker.bindPopup("<b>Hey !</b><br>Il y a du boulot ici.").openPopup();
+
+
+	{% for job in jobs %}
+		<!-- POSITION DES MARKER -->
+	  	var marker = L.marker([{{job['gpsLatitude']}}, {{job['gpsLongitude']}}]).addTo(mymap);
+
+	  	<!-- PLACEMENT DES MARKER ET MESSAGES -->
+  		marker.bindPopup("<b>{{job['companyName']}}</b><br>Il y a du boulot ici.").openPopup();
+	{% endfor %}  	
+
+
+
+
+
+	
+
+
+
+$( ".btnEntreprise" ).click(function() {
+
+  	id = this.getAttribute("href");
+  	var ladiv = document.getElementById(this.getAttribute("href"));
+  	ladiv.style.display = "block";
+
+ 	
+});
+
+
+
+
 </script>
 
 
 
-
+	
 
 
 {% endblock %}
