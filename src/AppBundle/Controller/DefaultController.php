@@ -226,8 +226,8 @@ class DefaultController extends Controller
                     "sort" => 1);
 
         $secondArray = array(
-                    "keywords" => 'informatique',
-                    "regionCode" => '11'
+                    "keywords" => 'architecte',
+                    "regionCode" => '53'
                     );
 
         $dataArray = array(
